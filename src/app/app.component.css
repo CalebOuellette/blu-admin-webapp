@@ -1,0 +1,56 @@
+
+#background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #1D79AF 0%, #030A21 100%);
+    /* background-image: url("../assets/bg.png");     */
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+}
+
+#logo{
+        margin: 30px;
+        display: flex;
+        align-items: center;
+}
+
+#logo-img{
+    transition: transform 200ms;
+}
+
+#logo-img:hover{
+    transform: scale(1.2);
+}
+
+.footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lnk{
+    margin: 20px;
+    user-select: none;
+    cursor: pointer
+}
+
+.lnk:hover{
+    text-decoration: underline;
+}
+
+.tlink{
+    user-select: none;
+    cursor: pointer
+}
+
+.tlink:hover{
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}

@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
   signUp() {
     this.errorText = "";
     this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then(success => {
+      this.fireDb.object("Users/" +  success.uid).update({lastLogin: new Date().getTime()});
       this.router.navigate(['/home']);
     }, fail => {
        console.log(fail);

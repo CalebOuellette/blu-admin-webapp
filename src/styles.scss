@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
+body{
+      font-weight: 300;
+      min-width: 300px;
+      margin: 0;
+      border: 0;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+}
+
+*{
+  outline: none;
+}
+Input{
+  background-color: white;
+  color: black;
+  padding: 12px 20px;  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 360px;
+  height: 45px;
+  font-family: 'Montserrat', sans-serif;
+}
+Input::input-placeholder{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+button{
+    //  background: linear-gradient(0deg, #E4F087 0%, #FC9C5D 100%);
+  background-color: #F4C858;
+  border: none;
+  color: #000000;
+  width: 70px;
+  height: 30px;
+  border-radius: 4px;
+  width: 100px;
+  font-weight: 700;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #979797;
+  border: solid 1px white;
+}
+
+button:hover {  
+  box-shadow: 0 0 1pt .75pt  white inset;    
+}
+
+
+.locationName{
+  font-weight: bold;
+}
+
+.paper{
+    background-color: white;
+    color: black;
+    min-height: 100vh;    
+    padding: 20px;
+}
+
+.paper-gt-md{
+  margin: 0px 100px 0px 100px;   
+}
+
+textarea{
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+ // background-color: #E8E8E8;
+  border: 1px solid #ccc;
+  resize: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px 20px;  
+  font-family: 'Montserrat', sans-serif;
+}
+textarea::input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+  }
+
+.cartShowingSearch{
+  width: calc(100% - 300px) !important;
+}
+
+
+.l{
+  color: #FFFFFF;
+  font-weight: Bold;
+  font-size: 48px;
+}
+.s{
+  color: #F2C94C;
+  font-weight: Bold;
+  font-size: 24px;
+}
+
+.outer{
+  min-height: calc(100vh - 115px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

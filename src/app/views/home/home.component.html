@@ -1,4 +1,18 @@
-<p>
-  home works!
-</p>
 <button (click)="logout()">Logout</button>
+
+
+<div class="orderTable">
+
+
+  <div class="tableItem" *ngFor="let order of orderList | async">
+    <div>
+      OrderID : {{order.$key}}
+    </div>
+    <div>
+      Created : {{order.orderTime | date:'medium'}}
+    </div>
+
+  </div>
+
+
+</div>
