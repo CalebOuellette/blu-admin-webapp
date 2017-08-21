@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth, AUTH_PROVIDERS } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-login',
@@ -18,16 +19,17 @@ export class LoginComponent implements OnInit {
 
   public errorText: string;
 
-  constructor(public afAuth: AngularFireAuth, public router: Router) {
+  constructor(public afAuth: AngularFireAuth, public router: Router, public fireDb: AngularFireDatabase) {
     this.user = afAuth.authState;
   }
 
   ngOnInit() {
     this.afAuth.authState.subscribe((user: firebase.User) => {
       if (user && user.isAnonymous == false) {
+        this.fireDb.object("Users/" +  user.uid).update({lastLogin: new Date().getTime()});
         this.router.navigate(['/home']); //forward to home
       }
-    })
+    });
   }
 
 
