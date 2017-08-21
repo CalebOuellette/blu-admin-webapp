@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFireAuth, AUTH_PROVIDERS } from 'angularfire2/auth';
 import { Router } from '@angular/router';
-import { OrderItemProps, Order } from '../../../../blu-classes';
+import { OrderItemProps, Order, AppSettings, AppSettingsProps } from '../../../../blu-classes';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 import { Observable, Subscription } from 'rxjs';
@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(public afAuth: AngularFireAuth, public router: Router, public fireDb: AngularFireDatabase) { }
 
   public orderList: FirebaseListObservable<OrderItemProps[]>;
+  public appSettings: FirebaseObjectObservable<AppSettingsProps>;
 
-  public hasAuth:boolean = false;
+  public hasAuth: boolean = false;
 
   public authSub: Subscription;
 
@@ -24,12 +25,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authSub = this.afAuth.authState.subscribe((user: firebase.User) => {
-      this.fireDb.object("Users/" + user.uid).subscribe((user)=>{
-        if(user.isAdmin === true){
-          this.hasAuth = true;
-        }
-      });
+      if (user && !user.isAnonymous) {
+        this.fireDb.object("Users/" + user.uid).subscribe((user) => {
+          if (user.isAdmin === true) {
+            this.hasAuth = true;
+          }
+        });
+      }
     });
+
+    this.appSettings = this.fireDb.object(AppSettings.dbAddress);
 
     this.orderList = this.fireDb.list(Order.dbAddress, {
       query: {
@@ -38,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.authSub.unsubscribe();
   }
 
@@ -47,5 +52,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.router.navigate(["login"]);
   }
 
+  setIsOpen(value: boolean) {
+    this.appSettings.update({
+      isOpen: value
+    });
+  }
 
 }
