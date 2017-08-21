@@ -1,0 +1,3 @@
+[submodule "blu-classes"]
+	path = blu-classes
+	url = https://github.com/CalebOuellette/blu-classes.git
