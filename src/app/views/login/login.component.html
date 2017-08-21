@@ -1,0 +1,27 @@
+<div id="holder">
+
+  <div id="content">
+    <div id="logo">
+      <img src="assets/logo_b.png">
+    </div>
+
+    <div class="outBox">
+      <div class="innerBox">
+        <div class="aControl">
+          <label  class="inputLabel">Email</label>
+          <input [(ngModel)]="email" type="text">
+        </div>
+        <div class="aControl">
+          <label  class="inputLabel">Password</label>
+          <input [(ngModel)]="password" type="password">
+        </div>
+        <div class="buttons aControl">
+          <button (click)="signUp()">Sign Up</button>
+          <button (click)="login()">Log In</button>
+          <button (click)="facebookLogin()">Facebook</button>
+        </div>
+          {{errorText}}
+      </div>
+    </div>
+  </div>
+</div>

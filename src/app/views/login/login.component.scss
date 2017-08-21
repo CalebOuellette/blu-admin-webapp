@@ -1,0 +1,55 @@
+$outBoxColor: #fff;
+
+
+#holder{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content{
+    display: flex;
+    align-items: center;
+}
+
+#login{
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+#logo{
+    width: 300px;
+}
+
+
+.innerBox {
+  margin: auto;
+}
+
+.outBox {
+  width: 500px;
+  height: 200px;
+  display: flex;
+  border-radius: 4px;
+}
+
+.inputLabel{
+    color: white;      
+   text-align: right;
+   width: 100px;
+   display: inline-block;
+   font-size: 13px;
+  line-height: 16px;
+}
+
+.aControl{
+    margin: 9px;
+}
+
+.buttons{
+    text-align: right;
+}
+
