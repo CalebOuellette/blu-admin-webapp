@@ -10,6 +10,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { LoginComponent } from './views/login/login.component';
 import { HomeComponent } from './views/home/home.component';
+import { OrderCardComponent } from './components/order-card/order-card.component';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 
 const appRoutes: Routes = [
@@ -27,7 +29,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    OrderCardComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

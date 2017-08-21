@@ -1,0 +1,35 @@
+.container{
+    background-color: white;
+    color: black;
+    box-shadow: 0px 3px 6px rgba(50, 50, 50, 0.50);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    div{
+        span{
+            font-weight: 500;   
+        }
+    }
+}
+
+.orderItems{
+    border-radius: 0px 0px 5px 5px;
+    background-color: white; 
+    color: black;
+    width: 80%;    
+    margin-left: 10%;
+}
+
+
+.tableItem{
+    padding: 15px;
+}
+
+
+.label{
+    font-weight: 700;
+    text-align: left;
+    font-size: 18px;
+    margin-right: 5px;    
+}

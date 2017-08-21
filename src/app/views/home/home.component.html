@@ -1,18 +1,13 @@
 <button (click)="logout()">Logout</button>
 
 
-<div class="orderTable">
-
-
-  <div class="tableItem" *ngFor="let order of orderList | async">
-    <div>
-      OrderID : {{order.$key}}
-    </div>
-    <div>
-      Created : {{order.orderTime | date:'medium'}}
-    </div>
-
+<div *ngIf="hasAuth" class="orderTable">
+  
+  <div class="tableItem" *ngFor="let order of orderList | async | reverse">
+      <blu-order-card [order]="order"></blu-order-card>
   </div>
+</div>
 
-
+<div *ngIf="!hasAuth"> 
+  Go ask Caleb for admin.
 </div>
