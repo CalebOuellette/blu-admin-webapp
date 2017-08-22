@@ -1,14 +1,21 @@
 <button (click)="logout()">Logout</button>
 
 
+<div *ngIf="hasAuth">
+  <button [ngClass]="{active: isOpen}" (click)="setIsOpen(true)">Open</button>
+  <button [ngClass]="{active: !isOpen}" (click)="setIsOpen(false)">Closed</button>
 
-<div *ngIf="hasAuth" class="orderTable">
+
   
-  <div class="tableItem" *ngFor="let order of orderList | async | reverse">
+  <div class="orderTable">
+
+    <div class="tableItem" *ngFor="let order of orderList | async | reverse">
       <blu-order-card [order]="order"></blu-order-card>
+    </div>
   </div>
+
 </div>
 
-<div *ngIf="!hasAuth"> 
+<div *ngIf="!hasAuth">
   Go ask Caleb for admin.
 </div>

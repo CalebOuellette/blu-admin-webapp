@@ -5,3 +5,11 @@
 .tableItem{
     margin: 20px;
 }
+
+button{
+    background-color: white;
+}
+
+.active{
+    background-color: #F4C858;
+}

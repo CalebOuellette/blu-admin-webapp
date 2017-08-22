@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public resultCount: number = 100;
 
+  public isOpen: boolean;
+
   ngOnInit() {
     this.authSub = this.afAuth.authState.subscribe((user: firebase.User) => {
       if (user && !user.isAnonymous) {
@@ -35,7 +37,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     this.appSettings = this.fireDb.object(AppSettings.dbAddress);
-
+    this.appSettings.subscribe((data: AppSettingsProps)=>{
+      this.isOpen = data.isOpen;
+    });
+    
     this.orderList = this.fireDb.list(Order.dbAddress, {
       query: {
         orderByChild: "createdDate"
