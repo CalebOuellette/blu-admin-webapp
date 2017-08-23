@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.authSub = this.afAuth.authState.subscribe((user: firebase.User) => {
       if (user && !user.isAnonymous) {
+        this.fireDb.object("Users/" +  user.uid).update({lastLogin: new Date().getTime()});
         this.fireDb.object("Users/" + user.uid).subscribe((user) => {
           if (user.isAdmin === true) {
             this.hasAuth = true;
