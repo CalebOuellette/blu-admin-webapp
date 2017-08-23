@@ -1,0 +1,104 @@
+{
+  "AppSettings": {
+    "isOpen": true
+  },
+  "Locations": {
+    "1": {
+      "description": "At Mercante you’ll find authentic Cucina Italiana featuring made-to-order traditional Italian pizzas cooked in a fiery-hot stone hearth oven. We also have pastas, salads, desserts and specialty coffees. For breakfast, try our poached egg sandwich topped with fontina fondue sauce and ham or seasonal veggies.",
+      "logoUrl": "./assets/logo_mercante.jpg",
+      "name": "Mercante",
+      "partnered": true
+    }
+  },
+  "Products": {
+    "1": {
+      "description": "Classic tomato, basil, bocconcini",
+      "locationID": "1",
+      "name": "Margherita",
+      "price": 11
+    },
+    "2": {
+      "description": "Bocconcini, mozzarella, gorgonzola, parmesan and chevre cheese",
+      "locationID": "1",
+      "name": "Pizza Bianca",
+      "price": 11
+    },
+    "3": {
+      "description": "Basil, mozzarella, bocconcini, arugula, pickled tomatoes, artichokes",
+      "name": "Ortonlana",
+      "locationID": "1",
+      "price": 11
+    },
+    "4": {
+      "description": "Pesto, prosciutto cotto, mozzarella, gorgonzola, artichokes, pickled tomatoes",
+      "name": "Al Pesto",
+      "locationID": "1",
+      "price": 12
+    },
+    "5": {
+      "description": "Chorizo, tomato, basil, oregano, mozzarella",
+      "name": "Alla Salsiccia",
+      "locationID": "1",
+      "price": 12
+    },
+    "6": {
+      "description": "Tomato, prosciutto, arugula, bocconcini, basil",
+      "name": "Prosciutto e Rucola",
+      "locationID": "1",
+      "price": 12
+    },
+    "7": {
+      "description": "Fresh lasagna sheets, béchamel and a traditional Ragu Bolognese",
+      "name": "Lasagna",
+      "locationID": "1",
+      "price": 9.25       
+    },
+
+    "8": {
+      "description": "",
+      "name": "Tortellini",
+      "locationID": "1",
+      "price": 7.95       
+    },
+
+    "9": {
+      "description": "Ladyfingers, espresso, liqueurs, cacao, egg, mascarpone cream",
+      "name": "Tiramisu",
+      "locationID": "1",
+      "price": 4.99       
+    },
+
+    "10": {
+      "description": "",
+      "name": "Ceasar Salad",
+      "locationID": "1",
+      "price": 5.75       
+    },
+    "11": {
+      "description": "",
+      "name": "Caprese salad",
+      "locationID": "1",
+      "price": 4.40       
+    },
+    "12": {
+      "description": "",
+      "name": "San peligrino",
+      "locationID": "1",
+      "price": 2.99      
+    }
+  },
+  "Users" : {
+    "EdZQAWqKBmhFxSud7esPfSeoB7G2" : {
+      "isAdmin" : true,
+      "lastLogin" : 1503462886199
+    },
+    "QSGUhzhtc1SpdWYKfamSfHwKSAw1" : {
+      "isAdmin" : true,
+      "lastLogin" : 1503462678016
+    },
+    "lJr5O5k7BeNxxptVofqNMnmLZvx2" : {
+      "isAdmin" : true,
+      "lastLogin" : 1503462763497
+    }
+  }
+}
