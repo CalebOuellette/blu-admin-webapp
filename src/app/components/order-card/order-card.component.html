@@ -22,7 +22,7 @@
 
 </div>
 <div class="orderItems">
-  <div class="tableItem" *ngFor="let item of orderItems | async">
+  <div class="tableItem" *ngFor="let item of orderItemsStatic">
     <div *ngIf="item.name">
       <span class="label">Item</span> {{item.name}}
     </div>
