@@ -15,6 +15,11 @@
   <div>
     <span>  OrderID </span> {{order.$key}}
   </div>
+  <div>
+    <span>  Payment </span> {{order.paymentType}}
+  </div>
+
+
 </div>
 <div class="orderItems">
   <div class="tableItem" *ngFor="let item of orderItems | async">
