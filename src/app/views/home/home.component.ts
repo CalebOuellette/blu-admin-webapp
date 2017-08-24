@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     
     this.orderList = this.fireDb.list(Order.dbAddress, {
       query: {
-        orderByChild: "createdDate"
+        limitLast: 100
       }
     });
   }
