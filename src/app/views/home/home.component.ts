@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(public afAuth: AngularFireAuth, public router: Router, public fireDb: AngularFireDatabase) { }
 
   public orderList: FirebaseListObservable<OrderItemProps[]>;
+  public orderListStatic: OrderItemProps[];
   public appSettings: FirebaseObjectObservable<AppSettingsProps>;
 
   public hasAuth: boolean = false;
@@ -47,6 +48,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         limitLast: 100
       }
     });
+
+    this.orderList.subscribe((data)=>{
+      this.orderListStatic = data.reverse();
+    })
   }
 
   ngOnDestroy() {

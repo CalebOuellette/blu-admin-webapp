@@ -9,7 +9,7 @@
   
   <div class="orderTable">
 
-    <div class="tableItem" *ngFor="let order of orderList | async | reverse">
+    <div class="tableItem" *ngFor="let order of orderListStatic">
       <blu-order-card [order]="order"></blu-order-card>
     </div>
   </div>
