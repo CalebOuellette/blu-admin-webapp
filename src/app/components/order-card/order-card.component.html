@@ -13,10 +13,14 @@
     <span> Email</span> {{(customer | async)?.email}}
   </div>
   <div>
-    <span>  OrderID </span> {{order.$key}}
+    <span>   OrderID </span> {{order.$key}}
   </div>
   <div>
     <span>  Payment </span> {{order.paymentType}}
+
+  </div>
+  <div>
+    <span>  To </span> {{order.to}}
   </div>
 
 
