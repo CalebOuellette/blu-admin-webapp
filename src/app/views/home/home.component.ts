@@ -25,6 +25,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   public resultCount: number = 100;
 
   public isOpen: boolean;
+  public closedText: string;
+  public closedSubText: string;
+
 
   ngOnInit() {
     this.authSub = this.afAuth.authState.subscribe((user: firebase.User) => {
@@ -41,6 +44,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.appSettings = this.fireDb.object(AppSettings.dbAddress);
     this.appSettings.subscribe((data: AppSettingsProps)=>{
       this.isOpen = data.isOpen;
+      this.closedText = data.closedText;
+      this.closedSubText = data.closedSubText;
     });
     
     this.orderList = this.fireDb.list(Order.dbAddress, {
@@ -68,5 +73,18 @@ export class HomeComponent implements OnInit, OnDestroy {
       isOpen: value
     });
   }
+
+  updateClosedText(){
+    this.appSettings.update({
+      closedText: this.closedText
+    });
+  }
+
+  updateClosedSubText(){
+    this.appSettings.update({
+      closedSubText: this.closedSubText
+    });
+  }
+
 
 }

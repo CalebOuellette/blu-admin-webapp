@@ -13,3 +13,7 @@ button{
 .active{
     background-color: #F4C858;
 }
+
+#siteControls{
+    padding: 20px;
+}

@@ -2,9 +2,27 @@
 
 
 <div *ngIf="hasAuth">
-  <button [ngClass]="{active: isOpen}" (click)="setIsOpen(true)">Open</button>
-  <button [ngClass]="{active: !isOpen}" (click)="setIsOpen(false)">Closed</button>
 
+  <div id="siteControls">
+  
+    
+    <div>
+      Site State
+      <button [ngClass]="{active: isOpen}" (click)="setIsOpen(true)">Open</button>
+      <button [ngClass]="{active: !isOpen}" (click)="setIsOpen(false)">Closed</button>
+    </div>
+    <div>
+    Site Closed Title Text
+      <input type="text" [(ngModel)]="closedText" >  <button (click)="updateClosedText()">Update</button>
+    </div>
+    <div>
+      Site Closed Sub-Title Text
+        <input type="text" [(ngModel)]="closedSubText" >   <button (click)="updateClosedSubText()">Update</button>
+    </div>
+      
+
+  </div>
+  
 
   
   <div class="orderTable">
